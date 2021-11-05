@@ -1,6 +1,7 @@
 
 import {useState} from 'react';
 import '../App.css';
+//import the images
 import AnneBoonchuy from '../images/anne.jpg';
 import SadieCroaker from '../images/croaker.png';
 import CaptainGrime from '../images/grime.png';
@@ -14,16 +15,17 @@ import SylviaSundew from '../images/sylvia.png';
 import MayorToadstool from '../images/toadstool.jpg';
 import Wally from '../images/wally.png';
 
+//set an initial state of score 
 const initialState = {
     score: 0,
   };
 
-function Cards(){
+const Cards = () => {
+    //set initial state of necessary fields
     const [{score},setState] = useState(initialState);
-
-   // const [score,setScore] = useState(0);
-    const [highestScore,sethighestScore] = useState(0);
+    const [highestScore,setHighestScore] = useState(0);
     const [scoreArr,setScoreArr] = useState([]);
+    const [ids,setIds] = useState([]);
     const [cardsArr,setCardsArr] =  useState([
         {"name":"Anne Boonchuy","source":AnneBoonchuy,"id":"0"},
         {"name":"Sadie Croaker","source":SadieCroaker,"id":"1"},
@@ -37,22 +39,23 @@ function Cards(){
         {"name":"Sylvia Sundew","source":SylviaSundew,"id":"9"},
         {"name":"Mayor Toadstool","source":MayorToadstool ,"id":"10"},
         {"name":"Wally","source":Wally,"id":"11"},
-
-
 ]);
-const [ids,setIds] = useState([]);
 
+//handle card click
 const handleClick = (e) => {
+    //get clicked card
 const clickedTarget = e.target;
+
+//check if there's a double click on any card
 checkDoubleClick(clickedTarget.id);
+
+//get the id of clicked card
 getID(clickedTarget);
 
+ //increment the score on each click
+ incrementScore();
 
-incrementScore();
-
-    /*scoreArr.push(score+1);
-    sethighestScore(Math.max(...scoreArr));*/
-
+ //shuffle cards
             shuffleArray(cardsArr)
 
 function shuffleArray(array) {
@@ -60,40 +63,40 @@ function shuffleArray(array) {
 }
 }
 
-
+//define incrementScore function
 function incrementScore(){
     setState({score:score+1});
 }
 
+//clear State
 const clearState = () => {
    setState(initialState)
-   
    }; 
 
+   //define get id function
 function getID (card){
     const clickedCardId = card.id;
-   // console.log(clickedCardId);
     storeId(clickedCardId)
 }
+//store the id in an array
 function storeId(id){
     ids.push(id);
 }
+//define checkDoubleClick
 function checkDoubleClick(cardId){
     if(ids.indexOf(cardId) !== -1){ 
  clearState();
- //testFunction();works fine
  scoreArr.push(score+1);
- sethighestScore(Math.max(...scoreArr));
+ setHighestScore(Math.max(...scoreArr));
 console.log("it is present");
-return true;
 
     } else {
  //testFunction();
 console.log("it is absent!");
-return false;
     }
     }
 
+    //return jsx
     return(
         <div id="main">
          <h3>Score:{score}</h3>
