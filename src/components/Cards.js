@@ -22,7 +22,6 @@ function Cards(){
     const [{score},setState] = useState(initialState);
 
    // const [score,setScore] = useState(0);
-    const[clickedTimes,setClickedTimes] = useState(0)
     const [highestScore,sethighestScore] = useState(0);
     const [scoreArr,setScoreArr] = useState([]);
     const [cardsArr,setCardsArr] =  useState([
@@ -44,7 +43,6 @@ function Cards(){
 const [ids,setIds] = useState([]);
 
 const handleClick = (e) => {
-setClickedTimes(clickedTimes+1);
 const clickedTarget = e.target;
 checkDoubleClick(clickedTarget.id);
 getID(clickedTarget);
@@ -52,30 +50,25 @@ getID(clickedTarget);
 
 incrementScore();
 
-    scoreArr.push(score+1);
-    sethighestScore(Math.max(...scoreArr));
+    /*scoreArr.push(score+1);
+    sethighestScore(Math.max(...scoreArr));*/
 
             shuffleArray(cardsArr)
 
 function shuffleArray(array) {
     return array.sort( ()=>Math.random()-0.5 ); 
-
 }
 }
 
 
 function incrementScore(){
-    if(checkDoubleClick === true){
-        console.log('no increase in score');
-    } else {
     setState({score:score+1});
 }
-}
 
-//const clearState = () => {
-  // setState(initialState)
+const clearState = () => {
+   setState(initialState)
    
-   // }; 
+   }; 
 
 function getID (card){
     const clickedCardId = card.id;
@@ -89,6 +82,8 @@ function checkDoubleClick(cardId){
     if(ids.indexOf(cardId) !== -1){ 
  clearState();
  //testFunction();works fine
+ scoreArr.push(score+1);
+ sethighestScore(Math.max(...scoreArr));
 console.log("it is present");
 return true;
 
@@ -98,14 +93,6 @@ console.log("it is absent!");
 return false;
     }
     }
-const clearState = () => {
-    setState(initialState);
-
-    }; 
-
-const testFunction = () => {
-    console.log('hello')
-}
 
     return(
         <div id="main">
