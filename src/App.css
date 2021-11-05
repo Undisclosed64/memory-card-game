@@ -1,12 +1,59 @@
-button {
-  width: 200px;
-  height: 200px;
-  background-color: rgba(231, 172, 43, 0.808);
-  border: none;
-  margin: 50px;
-}
+@import url("https://fonts.googleapis.com/css2?family=Ceviche+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Mochiy Pop One", sans-serif;
+}
+#main {
+  padding-top: 1rem;
+  margin: 0 auto;
+  background-image: url("https://media.istockphoto.com/photos/orange-autumn-background-old-watercolor-paper-texture-painted-marbled-picture-id1286001324?b=1&k=20&m=1286001324&s=170667a&w=0&h=8uzC9AfftH9H4lEA4QjZRSCLoEjtxqF42M8Qu9RslzY=");
+  background-size: contain;
+  background-repeat: repeat-y;
+}
+h3 {
+  font-size: 1.4rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
 h3,
 h4 {
   text-align: center;
+  padding: 10px;
+  font-family: "Press Start 2P", cursive;
+  color: aliceblue;
+}
+#cardSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+#card-cell {
+  padding-bottom: 55px !important;
+  padding: 10px;
+  margin: 10px;
+  color: aliceblue;
+  border-radius: 6px;
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  background-image: url("https://media.istockphoto.com/photos/abstract-glitch-background-picture-id1285591330?b=1&k=20&m=1285591330&s=170667a&w=0&h=hz8aiHDXdbjOXwTlFvk2q-74FsUmISSkDGF1rSvoGyA=");
+  background-image: url("https://images.unsplash.com/photo-1604079681864-c6fbd7eb109c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDN8fGJhY2tncm91bmR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60") !important;
+  background-position: bottom;
+}
+img {
+  width: 260px;
+  height: 260px;
+  border-radius: 6px;
+}
+.cardName {
+  padding-top: 10px;
 }
