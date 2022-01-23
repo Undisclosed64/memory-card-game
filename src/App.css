@@ -5,13 +5,6 @@
   margin: 0;
   padding: 0;
 }
-#main {
-  padding-top: 1rem;
-  margin: 0 auto;
-  background-image: url("https://media.istockphoto.com/photos/orange-autumn-background-old-watercolor-paper-texture-painted-marbled-picture-id1286001324?b=1&k=20&m=1286001324&s=170667a&w=0&h=8uzC9AfftH9H4lEA4QjZRSCLoEjtxqF42M8Qu9RslzY=");
-  background-size: contain;
-  background-repeat: repeat-y;
-}
 h3 {
   font-size: 1.4rem;
 }
@@ -23,42 +16,41 @@ h4 {
   text-align: center;
   padding: 10px;
   font-family: "Press Start 2P", cursive;
-  color: aliceblue;
 }
 #cardSection {
+  border: 2px solid orange;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
   flex-wrap: wrap;
-  padding: 30px;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5em;
+}
+
+.scene {
+  width: 150px;
+  height: 150px;
+  margin: 10px 0;
+  perspective: 600px;
 }
 #card-cell {
-  padding-bottom: 55px !important;
-  padding: 10px;
-  margin: 10px;
-  color: aliceblue;
-  border-radius: 6px;
-  font-family: "Press Start 2P", cursive;
+  border: 2px solid green;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+#card-cell:hover {
+  transform: rotateY(180deg);
+}
+.card__face {
+  position: absolute;
   text-align: center;
-  background-image: url("https://images.unsplash.com/photo-1604079681864-c6fbd7eb109c?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDN8fGJhY2tncm91bmR8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60");
-  background-position: bottom;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
 }
-img {
-  width: 260px;
-  height: 260px;
-  border-radius: 6px;
-}
-.cardName {
-  padding-top: 10px;
-}
-@media only screen and (min-width: 568px) {
-  #cardSection {
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-@media only screen and (min-width: 968px) {
-  #cardSection {
-    padding: 30px;
-  }
+.card__face--back {
+  transform: rotateY(180deg);
 }
