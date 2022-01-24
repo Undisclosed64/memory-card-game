@@ -1,0 +1,3 @@
+1)On card click,check if the click and the next clicked card are same.
+2)If they are same remove them from dom 
+3)If not flip them back after a few seconds.

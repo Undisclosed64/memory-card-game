@@ -9,22 +9,68 @@ import Wally from '../images/wally.png';
 function DisplayCards(){
 
 const cardsArr =  [
-    {"name":"Anne Boonchuy","source":AnneBoonchuy,"id":"0"},
-    {"name":"Hop Pop Plantar","source":HopPopPlantar,"id":"3"},
-    {"name":"Leopold Loggle","source":LeopoldLoggle,"id":"4"},
-    {"name":"Mayor Toadstool","source":MayorToadstool ,"id":"10"},
-    {"name":"Anne Boonchuy","source":AnneBoonchuy,"id":"0"},
-    {"name":"Sasha","source":Sasha,"id":"7"},
-    {"name":"Wally","source":Wally,"id":"11"},
-    {"name":"Leopold Loggle","source":LeopoldLoggle,"id":"4"},
-    {"name":"Mayor Toadstool","source":MayorToadstool ,"id":"10"},
-    {"name":"Wally","source":Wally,"id":"11"},
-    {"name":"Hop Pop Plantar","source":HopPopPlantar,"id":"3"},
-    {"name":"Sasha","source":Sasha,"id":"7"},
+    {"name":"Anne Boonchuy","source":AnneBoonchuy,"id":"anee"},
+    {"name":"Hop Pop Plantar","source":HopPopPlantar,"id":"h.p.planter"},
+    {"name":"Leopold Loggle","source":LeopoldLoggle,"id":"leopold"},
+    {"name":"Mayor Toadstool","source":MayorToadstool ,"id":"mayor"},
+    {"name":"Anne Boonchuy","source":AnneBoonchuy,"id":"anee"},
+    {"name":"Sasha","source":Sasha,"id":"sasha"},
+    {"name":"Wally","source":Wally,"id":"wally"},
+    {"name":"Leopold Loggle","source":LeopoldLoggle,"id":"leopold"},
+    {"name":"Mayor Toadstool","source":MayorToadstool ,"id":"mayor"},
+    {"name":"Wally","source":Wally,"id":"wally"},
+    {"name":"Hop Pop Plantar","source":HopPopPlantar,"id":"h.p.planter"},
+    {"name":"Sasha","source":Sasha,"id":"sasha"},
 
 
 ];
 
+let hasFlippedCard = false;
+let firstCard,secondCard;
+let firstCardImg,secondCardImg;
+
+ function toggleCard(event) {
+     const clickedCard = event.currentTarget;
+     clickedCard.classList.add('flip');
+
+     var clickedCardImg = clickedCard.childNodes[1];
+    
+     if(!hasFlippedCard){
+         hasFlippedCard = true;
+         firstCard=clickedCard;
+         firstCardImg = clickedCardImg
+         console.log(firstCard);
+
+     } else {
+         secondCard = clickedCard;
+         hasFlippedCard = false;
+         secondCardImg = clickedCardImg;
+         console.log(secondCard);
+         checkForMatch();
+
+     }
+
+     function checkForMatch() {
+        if (firstCardImg.id === secondCardImg.id) {
+          removeCards();
+          //return;
+        alert('yayy!Its a match!');
+        } else {
+          flipCardBack();
+        }
+    }
+    function removeCards(){
+   firstCardImg.style.display="none";
+   secondCardImg.style.display="none"  
+    }
+    function flipCardBack(){
+        setTimeout(() => {
+            firstCard.classList.remove('flip');
+            secondCard.classList.remove('flip');
+          }, 1500);
+    }
+
+    }
 
 
 return(
@@ -34,7 +80,7 @@ return(
         (function(element,index){
            return (
                <div className='scene scene--card'>
-               <div id="card-cell"> 
+               <div className="card-cell"onClick={e=>toggleCard(e)}> 
                <img src='https://media.istockphoto.com/photos/autumn-maple-leaves-picture-id92774227?s=612x612'alt=""className='card__face card__face--front'></img>
             
            <img src={element.source}alt=""key={index}id={element.id}className='card__face card__face--back'></img>
@@ -50,4 +96,5 @@ return(
 
 )
 }
+
 export default DisplayCards;
