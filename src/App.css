@@ -32,7 +32,7 @@ h4 {
   margin: 10px 0;
   perspective: 600px;
 }
-#card-cell {
+.card-cell {
   border: 2px solid green;
   width: 100%;
   height: 100%;
@@ -41,7 +41,7 @@ h4 {
   cursor: pointer;
   position: relative;
 }
-#card-cell:hover {
+.card-cell.flip {
   transform: rotateY(180deg);
 }
 .card__face {
