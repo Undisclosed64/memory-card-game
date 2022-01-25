@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9a648db1.chunk.css",
+    "main.js": "/static/js/main.a7972aac.chunk.js",
+    "main.js.map": "/static/js/main.a7972aac.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0d4e0f3d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0d4e0f3d.js.map",
+    "static/js/2.d4390afc.chunk.js": "/static/js/2.d4390afc.chunk.js",
+    "static/js/2.d4390afc.chunk.js.map": "/static/js/2.d4390afc.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.9a648db1.chunk.css.map": "/static/css/main.9a648db1.chunk.css.map",
+    "static/js/2.d4390afc.chunk.js.LICENSE.txt": "/static/js/2.d4390afc.chunk.js.LICENSE.txt",
+    "static/media/anne.d5e81b39.jpg": "/static/media/anne.d5e81b39.jpg",
+    "static/media/hoppop.bdf9504c.png": "/static/media/hoppop.bdf9504c.png",
+    "static/media/loggle.1b852d43.png": "/static/media/loggle.1b852d43.png",
+    "static/media/mapleLeaf.60c60926.jpg": "/static/media/mapleLeaf.60c60926.jpg",
+    "static/media/sasha.1d53515b.jpg": "/static/media/sasha.1d53515b.jpg",
+    "static/media/toadstool.77f7968d.jpg": "/static/media/toadstool.77f7968d.jpg",
+    "static/media/wally.6f127c1f.png": "/static/media/wally.6f127c1f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0d4e0f3d.js",
+    "static/js/2.d4390afc.chunk.js",
+    "static/css/main.9a648db1.chunk.css",
+    "static/js/main.a7972aac.chunk.js"
+  ]
+}
