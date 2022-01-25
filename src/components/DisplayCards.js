@@ -8,11 +8,14 @@ import Wally from '../images/wally.png';
 
 import {React,useState,useEffect} from 'react';
 
-
-
-
 function DisplayCards(){
     let [moves,setMoves] = useState(0);
+
+    let hasFlippedCard = false;
+let lockBoard = false;
+let firstCard,secondCard;
+let firstCardImg,secondCardImg;
+
 
 const cardsArr =  [
     {"name":"Anne Boonchuy","source":AnneBoonchuy,"id":"anee"},
@@ -30,16 +33,7 @@ const cardsArr =  [
 
 
 ];
-const [cards, setCards] = useState(
-    () => shuffleCards(cardsArr.concat(cardsArr))
-  );
-  
    
-
-let hasFlippedCard = false;
-let lockBoard = false;
-let firstCard,secondCard;
-let firstCardImg,secondCardImg;
 
  function toggleCard(event) {
      const clickedCard = event.currentTarget;
@@ -115,6 +109,7 @@ let firstCardImg,secondCardImg;
 
     }
     const handleRestart = () => {
+
         hasFlippedCard = false;
         setMoves(0);
         lockBoard = false;
@@ -128,46 +123,20 @@ let firstCardImg,secondCardImg;
    useEffect(() => {
         shuffleCards(cardsArr)
       }, []);*/
-    /*
       function shuffleCards(array) {
-        let currentIndex = array.length,  randomIndex;
-      
-        // While there remain elements to shuffle...
-        while (currentIndex !== 0) {
-      
-          // Pick a remaining element...
-          randomIndex = Math.floor(Math.random() * currentIndex);
-          currentIndex--;
-      
-          // And swap it with the current element.
-          [array[currentIndex], array[randomIndex]] = [
-            array[randomIndex], array[currentIndex]];
-        }
-      
-        return array;
-      }*/
-      // Fisher Yates Shuffle
-function swap(array, i, j) {
-    const temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
- }
- function shuffleCards(array) {
-    const length = array.length;
-    for (let i = length; i > 0; i--) {
-       const randomIndex = Math.floor(Math.random() * i);
-       const currentIndex = i - 1;
-       swap(array, currentIndex, randomIndex)
+        return array.sort( ()=>Math.random()-0.5 ); 
     }
-    return array;
- }
- 
+  
+
+  
+
 return(
 
 <main id='main'>
 <p id='findLine'>Find the matching pair of each card in the least number of tries!</p>
 <div className='moveRestart'><h2 id="move">Moves: {moves}
 </h2>
+<button onClick={shuffleCards(cardsArr)}>Shuffle cards</button>
 <button onClick={handleRestart}>Restart</button></div>
 
 
@@ -194,5 +163,6 @@ return(
 
 )
 }
+
 
 export default DisplayCards;
