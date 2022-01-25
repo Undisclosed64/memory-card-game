@@ -5,6 +5,7 @@ import LeopoldLoggle from '../images/loggle.png';
 import Sasha from '../images/sasha.jpg';
 import MayorToadstool from '../images/toadstool.jpg';
 import Wally from '../images/wally.png';
+import mapleLeaf from '../images/mapleLeaf.jpg';
 
 import {React,useState,useEffect} from 'react';
 
@@ -136,7 +137,7 @@ return(
                    
                <div className='scene scene--card'key={index}>
                <div className="card-cell"onClick={e=>handleGame(e)}> 
-               <img src='https://images.unsplash.com/photo-1540317700647-ec69694d70d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGxlYWZ8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60'alt="maple leaf"className='card__face card__face--front'></img>
+               <img src={mapleLeaf}alt="maple leaf"className='card__face card__face--front'></img>
             
            <img src={element.source}alt="memory-card"key={index}id={element.id}className='card__face card__face--back'></img>
 
