@@ -5,7 +5,7 @@
 ## <a href="https://undisclosed64.github.io/memory-card-game/">View project live</a>
 
 ## DESCRIPTION:
-This project is a memory card game built using ReactJS. The purpose behind this project was to implement important react concepts like functional components and hooks to build something fun and engaging. 
+This project is a memory card game built using ReactJS. The purpose behind this project was to implement important react concepts like functional components and hooks to build something fun and engaging.a
 
 ## Key points
 
