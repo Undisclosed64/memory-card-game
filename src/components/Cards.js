@@ -13,7 +13,6 @@ function Cards(){
 let [moves,setMoves] = useState(0);
 
 let hasFlippedCard = false;
-let lockBoard = false;
 let firstCard,secondCard;
 let firstCardImg,secondCardImg;
 
@@ -34,7 +33,6 @@ let [cardsArr, setCardsArr] =  useState([    {"name":"Anne Boonchuy","source":An
  function handleGame(event) {
      const clickedCard = event.currentTarget;
 
-     if (lockBoard === true) return;
      if (clickedCard === firstCard) return;
         clickedCard.classList.add('flip');
 
@@ -72,7 +70,6 @@ let [cardsArr, setCardsArr] =  useState([    {"name":"Anne Boonchuy","source":An
 
     }
     function flipCardBack(){
-        lockBoard = true;
 
         setTimeout(() => {
             firstCard.classList.remove('flip');
@@ -96,14 +93,13 @@ let [cardsArr, setCardsArr] =  useState([    {"name":"Anne Boonchuy","source":An
     }
     
     function resetBoard() {
-        [hasFlippedCard, lockBoard] = [false, false];
+        [hasFlippedCard] = [false];
         [firstCard, secondCard] = [null, null];
       }
     }
     const handleRestart = () => {
         hasFlippedCard = false;
         setMoves(0);
-        lockBoard = false;
 
         shuffleCards();
 
