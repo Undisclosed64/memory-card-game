@@ -78,13 +78,17 @@ button {
 @media only screen and (min-width: 568px) {
   #cardSection {
     width: 640px;
-    height: 550px;
-    padding-top: 3em;
+    height: 450px;
   }
   button {
     margin-left: 2em;
     width: 180px;
     height: 50px;
     bottom: 0.5em;
+  }
+}
+@media only screen and (min-width: 968px) {
+  #cardSection {
+    height: 550px;
   }
 }
