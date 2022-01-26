@@ -41,7 +41,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
-  padding-top: 3em;
+  padding-top: 2em;
   padding-bottom: 3em;
 }
 
@@ -78,7 +78,8 @@ button {
 @media only screen and (min-width: 568px) {
   #cardSection {
     width: 640px;
-    height: 640px;
+    height: 550px;
+    padding-top: 3em;
   }
   button {
     margin-left: 2em;
