@@ -77,7 +77,7 @@ let [cardsArr, setCardsArr] =  useState([    {"name":"Anne Boonchuy","source":An
 
             resetBoard();
 
-          }, 500);
+          }, 1000);
           
     }
     function checkWin(){
